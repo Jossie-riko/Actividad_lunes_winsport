@@ -1,7 +1,8 @@
-import { Link } from 'react-router'
-import "./style.css";
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router'
+import { EquiposContext } from "../EquiposContext";
 
+import "./style.css";
 
 interface Ranking {
   rank: number
@@ -49,7 +50,7 @@ function Home() {
   const [filtro, setFiltro] = useState<FiltroTipo>('posiciones')
   const [estadisticas, setEstadisticas] = useState<Estadistica[]>([])
   const [busqueda, setBusqueda] = useState('')
-
+  
   const filtros: FiltroTipo[] = ['posiciones', 'goleador', 'asistencias', 'amarillas', 'atajadas'];
 
   useEffect(() => {
